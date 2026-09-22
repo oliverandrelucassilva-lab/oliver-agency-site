@@ -329,6 +329,17 @@ svg { flex-shrink: 0; }
   background: var(--bg-alt);
   align-items: flex-start;
   justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.case-card-placeholder:hover {
+  border-color: var(--orange);
+  background: var(--orange-light);
+}
+.case-card-placeholder:hover .case-placeholder-icon {
+  background: var(--orange);
+  color: #fff;
+  border-color: var(--orange);
 }
 .case-placeholder-icon {
   width: 44px;
