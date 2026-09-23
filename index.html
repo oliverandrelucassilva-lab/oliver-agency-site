@@ -187,66 +187,91 @@
       </div>
 
       <!--
-        TEMPLATE DE CASE — copie o bloco <article class="case-card reveal"> ao fechar um novo cliente.
-        Campos:
-          - .case-avatar: coloque <img src="assets/img/nome-do-cliente.jpg" alt="Foto de ...">
+        TEMPLATE DE CASE — copie um bloco <div class="cases-slide"><article class="case-card reveal">…</article></div>
+        ao fechar um novo cliente. Campos:
+          - .case-avatar: coloque <img src="assets/img/nome-do-cliente.png" alt="Foto de ...">
             no lugar do fallback de iniciais (span.case-avatar-fallback) quando tiver a foto.
-          - .case-type: "Site institucional" | "Atendimento automático" | "Social media" | "Em configuração"
+          - .case-type: descreva o produto que o cliente TEM hoje (ex.: "Site institucional",
+            "Atendimento automático", "E-commerce") — nunca um status de progresso tipo
+            "em construção"/"em configuração".
           - .case-cta-link: aponta para cases/<arquivo>.html, o perfil completo do cliente
             (todos os serviços já realizados + o que ainda podemos oferecer pra ele).
+        O carrossel nunca quebra linha: cards novos entram sempre ao lado, dentro do #casesTrack.
       -->
-      <div class="grid grid-3 cases-grid">
-        <article class="case-card reveal">
-          <div class="case-tagbar"><span class="case-type">Site institucional</span></div>
-          <div class="case-avatar">
-            <img src="assets/img/clinica-amalos.png" alt="Logo da Clínica Amalos">
-          </div>
-          <h3>Clínica Amalos</h3>
-          <p class="case-niche">Saúde Integrativa e Odontológica</p>
-          <p class="case-result">Presença digital nova, alinhada com o posicionamento da clínica e pronta para atrair pacientes da região.</p>
-          <a class="case-cta-link" href="cases/clinica-amalos.html">Ver perfil completo →</a>
-        </article>
+      <div class="cases-carousel">
+        <button class="cases-arrow cases-arrow-prev" aria-label="Case anterior" type="button">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
 
-        <article class="case-card reveal">
-          <div class="case-tagbar case-tagbar-progress"><span class="case-type">Em configuração</span></div>
-          <div class="case-avatar">
-            <img src="assets/img/ortomaster.png" alt="Logo da OrtoMaster">
-          </div>
-          <h3>OrtoMaster</h3>
-          <p class="case-niche">Clínica Odontológica</p>
-          <p class="case-result">Sistema de atendimento automático via WhatsApp em fase de configuração, pra dar boas-vindas e agendar pacientes 24h.</p>
-          <a class="case-cta-link" href="cases/ortomaster.html">Ver perfil completo →</a>
-        </article>
+        <div class="cases-viewport">
+          <div class="cases-track" id="casesTrack">
+            <div class="cases-slide">
+              <article class="case-card reveal">
+                <div class="case-tagbar"><span class="case-type">Site institucional</span></div>
+                <div class="case-avatar">
+                  <img src="assets/img/clinica-amalos.png" alt="Logo da Clínica Amalos">
+                </div>
+                <h3>Clínica Amalos</h3>
+                <p class="case-niche">Saúde Integrativa e Odontológica</p>
+                <p class="case-result">Presença digital que passa credibilidade e ajuda a atrair pacientes da região.</p>
+                <a class="case-cta-link" href="cases/clinica-amalos.html">Ver perfil completo →</a>
+              </article>
+            </div>
 
-        <article class="case-card reveal">
-          <div class="case-tagbar"><span class="case-type">Site + Atendimento automático</span></div>
-          <div class="case-avatar">
-            <img src="assets/img/clinica-odonto-med.png" alt="Logo da Clínica Odonto Med">
-          </div>
-          <h3>Clínica Odonto Med</h3>
-          <p class="case-niche">Clínica Médica e Odontológica</p>
-          <p class="case-result">Site institucional e atendimento automático via WhatsApp entregues, com gestão de redes sociais ativa toda semana.</p>
-          <a class="case-cta-link" href="cases/clinica-odonto-med.html">Ver perfil completo →</a>
-        </article>
+            <div class="cases-slide">
+              <article class="case-card reveal">
+                <div class="case-tagbar"><span class="case-type">Atendimento automático</span></div>
+                <div class="case-avatar">
+                  <img src="assets/img/ortomaster.png" alt="Logo da OrtoMaster">
+                </div>
+                <h3>OrtoMaster</h3>
+                <p class="case-niche">Clínica Odontológica</p>
+                <p class="case-result">Atendimento automático via WhatsApp que dá boas-vindas, responde dúvidas e agenda pacientes 24h.</p>
+                <a class="case-cta-link" href="cases/ortomaster.html">Ver perfil completo →</a>
+              </article>
+            </div>
 
-        <article class="case-card reveal">
-          <div class="case-tagbar case-tagbar-progress"><span class="case-type">Em construção</span></div>
-          <div class="case-avatar">
-            <img src="assets/img/jf-move.png" alt="Logo da JF Move">
-          </div>
-          <h3>JF Move</h3>
-          <p class="case-niche">E-commerce</p>
-          <p class="case-result">Loja virtual completa em desenvolvimento, do catálogo de produtos ao checkout, pronta pra vender online.</p>
-          <a class="case-cta-link" href="cases/jf-move.html">Ver perfil completo →</a>
-        </article>
+            <div class="cases-slide">
+              <article class="case-card reveal">
+                <div class="case-tagbar"><span class="case-type">Site + Atendimento automático</span></div>
+                <div class="case-avatar">
+                  <img src="assets/img/clinica-odonto-med.png" alt="Logo da Clínica Odonto Med">
+                </div>
+                <h3>Clínica Odonto Med</h3>
+                <p class="case-niche">Clínica Médica e Odontológica</p>
+                <p class="case-result">Site institucional e atendimento automático via WhatsApp, com gestão de redes sociais ativa toda semana.</p>
+                <a class="case-cta-link" href="cases/clinica-odonto-med.html">Ver perfil completo →</a>
+              </article>
+            </div>
 
-        <a href="https://wa.me/5575998316140?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20ser%20o%20pr%C3%B3ximo%20case%20da%20Oliver%20Agency" class="case-card case-card-placeholder reveal" target="_blank" rel="noopener">
-          <div class="case-placeholder-icon">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>
+            <div class="cases-slide">
+              <article class="case-card reveal">
+                <div class="case-tagbar"><span class="case-type">E-commerce</span></div>
+                <div class="case-avatar">
+                  <img src="assets/img/jf-move.png" alt="Logo da JF Move">
+                </div>
+                <h3>JF Move</h3>
+                <p class="case-niche">Moda Fitness</p>
+                <p class="case-result">Loja virtual completa, com catálogo de produtos, carrinho e checkout, pronta pra vender online.</p>
+                <a class="case-cta-link" href="cases/jf-move.html">Ver perfil completo →</a>
+              </article>
+            </div>
+
+            <div class="cases-slide">
+              <a href="https://wa.me/5575998316140?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20ser%20o%20pr%C3%B3ximo%20case%20da%20Oliver%20Agency" class="case-card case-card-placeholder reveal" target="_blank" rel="noopener">
+                <div class="case-placeholder-icon">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>
+                </div>
+                <h3>Seu negócio aqui</h3>
+                <p class="case-result">O próximo case pode ser o seu. Vamos conversar sobre como profissionalizar seu atendimento?</p>
+              </a>
+            </div>
           </div>
-          <h3>Seu negócio aqui</h3>
-          <p class="case-result">O próximo case pode ser o seu. Vamos conversar sobre como profissionalizar seu atendimento?</p>
-        </a>
+        </div>
+
+        <button class="cases-arrow cases-arrow-next" aria-label="Próximo case" type="button">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
   </section>
