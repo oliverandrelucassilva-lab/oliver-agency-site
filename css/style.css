@@ -324,6 +324,55 @@ svg { flex-shrink: 0; }
 .case-niche { font-size: 0.85rem; color: var(--ink-soft); font-weight: 600; margin-bottom: 12px; }
 .case-result { font-size: 0.92rem; margin-bottom: 0; }
 
+.case-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+}
+.case-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.case-avatar-fallback {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--blue);
+}
+
+.case-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-alt);
+  color: var(--blue);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.case-link:hover { background: var(--orange); color: #fff; }
+.case-link-site {
+  width: auto;
+  border-radius: 999px;
+  padding: 0 14px;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 .case-card-placeholder {
   border: 2px dashed var(--line);
   background: var(--bg-alt);

@@ -167,16 +167,21 @@
         <p class="lead reveal">Cada card aqui é um negócio de verdade que confiou na gente. A lista só cresce.</p>
       </div>
 
+      <!--
+        TEMPLATE DE CASE — copie o bloco <article class="case-card reveal"> ao fechar um novo cliente.
+        Campos:
+          - .case-avatar: coloque <img src="assets/img/nome-do-cliente.jpg" alt="Foto de ...">
+            no lugar do fallback de iniciais (span.case-avatar-fallback) quando tiver a foto.
+          - .case-type: "Site institucional" | "Atendimento automático" | "Em configuração"
+          - .case-links: adicione um <a> por rede/site disponível (site, instagram, etc.).
+            Se o cliente não tiver ainda, pode remover a div .case-links inteira.
+      -->
       <div class="grid grid-3 cases-grid">
         <article class="case-card reveal">
           <div class="case-tagbar"><span class="case-type">Site institucional</span></div>
-          <h3>Dra. Yumi Sasaki</h3>
-          <p class="case-niche">Odontologia Estética</p>
-          <p class="case-result">Site institucional profissional que passa credibilidade e facilita o primeiro contato de novos pacientes.</p>
-        </article>
-
-        <article class="case-card reveal">
-          <div class="case-tagbar"><span class="case-type">Site institucional</span></div>
+          <div class="case-avatar">
+            <span class="case-avatar-fallback">CA</span>
+          </div>
           <h3>Clínica Amalos</h3>
           <p class="case-niche">Saúde Integrativa e Odontológica</p>
           <p class="case-result">Presença digital nova, alinhada com o posicionamento da clínica e pronta para atrair pacientes da região.</p>
@@ -184,6 +189,9 @@
 
         <article class="case-card reveal">
           <div class="case-tagbar case-tagbar-progress"><span class="case-type">Em configuração</span></div>
+          <div class="case-avatar">
+            <span class="case-avatar-fallback">OM</span>
+          </div>
           <h3>OrtoMaster</h3>
           <p class="case-niche">Clínica Odontológica</p>
           <p class="case-result">Sistema de atendimento automático via WhatsApp em fase de configuração, pra dar boas-vindas e agendar pacientes 24h.</p>
