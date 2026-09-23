@@ -101,84 +101,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Carrossel de cases — nunca quebra linha; novos cards entram sempre ao lado,
-  // com rotação automática e infinita, mais setas pra navegação manual.
-  const casesTrack = document.getElementById('casesTrack');
-  if (casesTrack) {
-    const originalSlides = Array.from(casesTrack.children);
-    const slideCount = originalSlides.length;
-
-    originalSlides.forEach((slide) => {
-      const clone = slide.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      clone.querySelectorAll('a, button').forEach((el) => el.setAttribute('tabindex', '-1'));
-      casesTrack.appendChild(clone);
-    });
-
-    let index = 0;
-    let step = 0;
-
-    const measure = () => {
-      const first = casesTrack.children[0];
-      const gap = parseFloat(window.getComputedStyle(casesTrack).columnGap || '0');
-      step = first.getBoundingClientRect().width + gap;
-    };
-
-    const goTo = (i, instant) => {
-      index = i;
-      casesTrack.style.transition = instant ? 'none' : '';
-      casesTrack.style.transform = `translateX(-${index * step}px)`;
-    };
-
-    const next = () => {
-      goTo(index + 1);
-      if (index >= slideCount) {
-        window.setTimeout(() => {
-          goTo(0, true);
-          casesTrack.offsetHeight;
-          casesTrack.style.transition = '';
-        }, 650);
-      }
-    };
-
-    const prev = () => {
-      if (index <= 0) {
-        goTo(slideCount, true);
-        casesTrack.offsetHeight;
-        window.requestAnimationFrame(() => goTo(slideCount - 1));
-      } else {
-        goTo(index - 1);
-      }
-    };
-
-    measure();
-    goTo(0, true);
-    window.addEventListener('resize', () => {
-      measure();
-      goTo(index, true);
-    });
-
-    const prevBtn = document.querySelector('.cases-arrow-prev');
-    const nextBtn = document.querySelector('.cases-arrow-next');
-    const viewport = document.querySelector('.cases-viewport');
-    let autoplay = null;
-
-    const stopAutoplay = () => {
-      if (autoplay) window.clearInterval(autoplay);
-    };
-    const startAutoplay = () => {
-      if (reduceMotion) return;
-      stopAutoplay();
-      autoplay = window.setInterval(next, 4200);
-    };
-
-    if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
-    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
-    if (viewport) {
-      viewport.addEventListener('mouseenter', stopAutoplay);
-      viewport.addEventListener('mouseleave', startAutoplay);
-    }
-
-    startAutoplay();
-  }
+  // Cases: por enquanto a fileira é estática (sem setas, sem rotação automática).
+  // #casesTrack continua um flex row que nunca quebra linha — se não couber tudo
+  // na tela, dá pra arrastar/rolar horizontalmente. Novos cards entram sempre ao lado.
+  //
+  // Código do carrossel com setas + autoplay infinito (usar quando a lista crescer):
+  // descomente este bloco e devolva os botões .cases-arrow-prev/.cases-arrow-next no HTML.
+  //
+  // const casesTrack = document.getElementById('casesTrack');
+  // if (casesTrack) {
+  //   const originalSlides = Array.from(casesTrack.children);
+  //   const slideCount = originalSlides.length;
+  //   originalSlides.forEach((slide) => {
+  //     const clone = slide.cloneNode(true);
+  //     clone.setAttribute('aria-hidden', 'true');
+  //     clone.querySelectorAll('a, button').forEach((el) => el.setAttribute('tabindex', '-1'));
+  //     casesTrack.appendChild(clone);
+  //   });
+  //   let index = 0;
+  //   let step = 0;
+  //   const measure = () => {
+  //     const first = casesTrack.children[0];
+  //     const gap = parseFloat(window.getComputedStyle(casesTrack).columnGap || '0');
+  //     step = first.getBoundingClientRect().width + gap;
+  //   };
+  //   const goTo = (i, instant) => {
+  //     index = i;
+  //     casesTrack.style.transition = instant ? 'none' : '';
+  //     casesTrack.style.transform = `translateX(-${index * step}px)`;
+  //   };
+  //   const next = () => {
+  //     goTo(index + 1);
+  //     if (index >= slideCount) {
+  //       window.setTimeout(() => {
+  //         goTo(0, true);
+  //         casesTrack.offsetHeight;
+  //         casesTrack.style.transition = '';
+  //       }, 650);
+  //     }
+  //   };
+  //   const prev = () => {
+  //     if (index <= 0) {
+  //       goTo(slideCount, true);
+  //       casesTrack.offsetHeight;
+  //       window.requestAnimationFrame(() => goTo(slideCount - 1));
+  //     } else {
+  //       goTo(index - 1);
+  //     }
+  //   };
+  //   measure();
+  //   goTo(0, true);
+  //   window.addEventListener('resize', () => { measure(); goTo(index, true); });
+  //   const prevBtn = document.querySelector('.cases-arrow-prev');
+  //   const nextBtn = document.querySelector('.cases-arrow-next');
+  //   const viewport = document.querySelector('.cases-viewport');
+  //   let autoplay = null;
+  //   const stopAutoplay = () => { if (autoplay) window.clearInterval(autoplay); };
+  //   const startAutoplay = () => {
+  //     if (reduceMotion) return;
+  //     stopAutoplay();
+  //     autoplay = window.setInterval(next, 4200);
+  //   };
+  //   if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+  //   if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+  //   if (viewport) {
+  //     viewport.addEventListener('mouseenter', stopAutoplay);
+  //     viewport.addEventListener('mouseleave', startAutoplay);
+  //   }
+  //   startAutoplay();
+  // }
 });

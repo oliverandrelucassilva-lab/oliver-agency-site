@@ -196,13 +196,11 @@
             "em construção"/"em configuração".
           - .case-cta-link: aponta para cases/<arquivo>.html, o perfil completo do cliente
             (todos os serviços já realizados + o que ainda podemos oferecer pra ele).
-        O carrossel nunca quebra linha: cards novos entram sempre ao lado, dentro do #casesTrack.
+        Por enquanto todos os cards ficam visíveis lado a lado, sem setas e sem rotação
+        automática — quando a lista crescer, dá pra reativar as setas (.cases-arrow) e o
+        autoplay comentados no js/main.js.
       -->
       <div class="cases-carousel">
-        <button class="cases-arrow cases-arrow-prev" aria-label="Case anterior" type="button">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-
         <div class="cases-viewport">
           <div class="cases-track" id="casesTrack">
             <div class="cases-slide">
@@ -268,10 +266,6 @@
             </div>
           </div>
         </div>
-
-        <button class="cases-arrow cases-arrow-next" aria-label="Próximo case" type="button">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
       </div>
     </div>
   </section>

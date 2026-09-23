@@ -373,10 +373,15 @@ svg { flex-shrink: 0; }
   gap: 14px;
 }
 .cases-viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   flex: 1;
   min-width: 0;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
+.cases-slide { scroll-snap-align: start; }
 .cases-track {
   display: flex;
   gap: 24px;
