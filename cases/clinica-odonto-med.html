@@ -73,75 +73,20 @@
         </a>
       </div>
 
-      <div class="tech-stack">
-        <p class="tech-stack-label">Stack técnica da automação</p>
-        <div class="badges">
-          <span class="badge">n8n (self-hosted / Easypanel)</span>
-          <span class="badge">OpenAI GPT-4.1-mini</span>
-          <span class="badge">UazAPI (WhatsApp)</span>
-          <span class="badge">Supabase (Postgres)</span>
-          <span class="badge">Chatwoot</span>
-          <span class="badge">Google Calendar (OAuth2)</span>
-          <span class="badge">Traefik + SSL</span>
-        </div>
-      </div>
-
       <div class="service-group">
-        <h2>Meury — atendimento automático via WhatsApp</h2>
-        <p class="service-group-sub">Um agente roteador central despacha cada mensagem pro subagente especializado certo.</p>
+        <h2>O que a Meury faz</h2>
         <div class="service-grid">
           <div class="service-card service-card-done">
-            <h3>Atende e Qualifica</h3>
-            <p>Primeiro contato, qualificação de especialidade, triagem entre agendamento direto, encaminhamento pra recepção ou atendimento por ordem de chegada.</p>
+            <h3>Atende e qualifica</h3>
+            <p>Recebe o primeiro contato, identifica a especialidade de interesse e já direciona pro agendamento ou pra recepção, quando for o caso.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Agendador</h3>
-            <p>Agendamento, reagendamento e cancelamento via Google Calendar, com verificação automática de disponibilidade e slots fixos por profissional.</p>
+            <h3>Agenda sozinha</h3>
+            <p>Marca, reagenda ou cancela consultas verificando a disponibilidade de cada profissional automaticamente.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>FAQ</h3>
-            <p>Respostas sobre valores, especialidades, convênios, horários e localização, restritas a uma base de conhecimento fechada, sem alucinação.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Especialista em Procedimentos</h3>
-            <p>Dúvidas técnicas específicas sobre preparo de exames, como endoscopia e espirometria.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-group">
-        <h2>Desafios técnicos resolvidos</h2>
-        <p class="service-group-sub">Monitoramento contínuo em produção e ajuste fino guiado por casos reais.</p>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <h3>Duplicação de mensagens em produção</h3>
-            <p>Investigação extensa eliminando hipóteses ao longo de semanas: webhook duplicado, integração nativa uazapi↔Chatwoot, deploy duplicado de container, debounce interno.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> camada de deduplicação por message_id com Redis, até identificar a causa raiz — incompatibilidade entre o modo "Responses API" da OpenAI e o node AI Agent do n8n com ferramentas conectadas.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Migração de infraestrutura de dados</h3>
-            <p>A memória conversacional vivia num Postgres interno, não acessível externamente.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> migração pro Supabase, permitindo monitoramento, auditoria e correção remota das conversas em produção.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Auto-recuperação de falhas</h3>
-            <p>Sessões corrompidas travavam silenciosamente a conversa do paciente.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> tratamento de erro no agente roteador com limpeza automática de sessões e mensagem de recuperação transparente ao paciente.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Fuso horário e lógica temporal</h3>
-            <p>Cálculo incorreto de saudação e horário de funcionamento, incluindo respostas erradas sobre disponibilidade fora do expediente real.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> ajuste da variável de ambiente de timezone e revisão da lógica de horário.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Governança de dados sensíveis</h3>
-            <p>Risco de profissionais da equipe serem tratados como pacientes pela automação.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> exclusão de números internos do processamento automático, com script de verificação cruzada e normalização de formatos de telefone brasileiros.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Handoff humano-IA</h3>
-            <p>Conversas encaminhadas pra recepção precisavam pausar a IA sem se perder.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> ciclo de pausa/retomada com reativação manual via marcador, e rotina periódica de auditoria pra reativar conversas esquecidas.</p>
+            <h3>Tira dúvidas</h3>
+            <p>Responde sobre valores, especialidades, convênios, horários e localização.</p>
           </div>
         </div>
       </div>

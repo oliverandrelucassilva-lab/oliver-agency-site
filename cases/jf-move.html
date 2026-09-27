@@ -46,16 +46,14 @@
           <h1>JF Move</h1>
           <p class="profile-niche">Moda Fitness — E-commerce completo com painel administrativo próprio</p>
           <div class="profile-badges">
-            <span class="status-badge">E-commerce full-stack</span>
+            <span class="status-badge">E-commerce</span>
             <span class="status-badge">Painel administrativo</span>
-            <span class="status-badge">Auditoria de segurança</span>
           </div>
         </div>
       </div>
 
       <div class="profile-story">
-        <p>A JF Move é uma marca de moda fitness que precisava de uma loja online completa, mas cuja proprietária não tem background técnico — então o desafio não era só "construir uma loja", era construir um painel administrativo que ela conseguisse operar sozinha no dia a dia: cadastrar produto, ver pedido, responder cliente, acompanhar financeiro, tudo sem depender de suporte técnico pras tarefas do dia a dia. Desenvolvemos o projeto full-stack sozinhos: arquitetura, banco de dados, integração de pagamento, painel admin e duas rodadas independentes de auditoria de segurança.</p>
-        <p>Veja como ficou: <a href="https://www.jfmove.shop" target="_blank" rel="noopener">jfmove.shop</a></p>
+        <p>A JF Move é uma marca de moda fitness que precisava de uma loja online completa, mas cuja proprietária não tem background técnico — então o desafio não era só "construir uma loja", era construir um painel que ela conseguisse operar sozinha no dia a dia: cadastrar produto, ver pedido, responder cliente, acompanhar financeiro, tudo sem depender de ajuda técnica pras tarefas do dia a dia.</p>
       </div>
 
       <div class="profile-links">
@@ -65,136 +63,43 @@
         </a>
       </div>
 
-      <div class="tech-stack">
-        <p class="tech-stack-label">Stack técnica</p>
-        <div class="badges">
-          <span class="badge">Next.js (App Router)</span>
-          <span class="badge">TypeScript</span>
-          <span class="badge">Tailwind CSS v4</span>
-          <span class="badge">Supabase (Postgres, Auth, Storage, RLS)</span>
-          <span class="badge">Mercado Pago</span>
-          <span class="badge">Vercel</span>
-          <span class="badge">Resend</span>
-        </div>
-      </div>
-
       <div class="service-group">
-        <h2>Loja (storefront)</h2>
-        <p class="service-group-sub">A experiência de compra, do catálogo ao checkout.</p>
+        <h2>A loja</h2>
         <div class="service-grid">
           <div class="service-card service-card-done">
-            <h3>Catálogo e busca</h3>
-            <p>Filtro por coleção, tamanho, cor e busca por texto, incluindo tags de busca configuráveis por produto.</p>
+            <h3>Catálogo fácil de navegar</h3>
+            <p>O cliente encontra o produto rápido, filtrando por coleção, tamanho e cor.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Página de produto</h3>
-            <p>Variações de tamanho/cor com estoque individual por variação e avaliações de compra verificada.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Carrinho e checkout</h3>
-            <p>Carrinho persistente por conta (não por navegador), recuperação de carrinho abandonado e três formas de pagamento: Pix com QR code na hora, cartão de crédito tokenizado direto no Mercado Pago (sem o cartão nunca tocar no servidor) e dinheiro na entrega.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Frete em tempo real</h3>
-            <p>Cálculo via SuperFrete, com fallback pra faixas fixas configuráveis pelo admin.</p>
+            <h3>Pagamento em poucos cliques</h3>
+            <p>Pix, cartão de crédito ou dinheiro na entrega, com frete calculado automaticamente na hora da compra.</p>
           </div>
           <div class="service-card service-card-done">
             <h3>Cupons e fidelidade</h3>
-            <p>Cupom gerado automaticamente após uma compra, e um cupom exclusivo pra quem tem conta há mais de 60 dias.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>E-mails e SEO</h3>
-            <p>E-mails transacionais via Resend (confirmação, pagamento aprovado, envio, carrinho abandonado), SEO por produto com JSON-LD, sitemap dinâmico e redirecionamentos 301.</p>
+            <p>Descontos automáticos pra quem acabou de comprar e pra clientes fiéis, sem precisar criar nada manualmente.</p>
           </div>
         </div>
       </div>
 
       <div class="service-group">
         <h2>Painel administrativo</h2>
-        <p class="service-group-sub">O maior pedaço do projeto — construído pra ser "self-service" de verdade, no estilo de plataformas como Nuvemshop.</p>
+        <p class="service-group-sub">A parte mais importante do projeto: a dona da loja cuida de tudo sozinha, sem depender de ajuda técnica.</p>
         <div class="service-grid">
           <div class="service-card service-card-done">
-            <h3>Produtos</h3>
-            <p>CRUD completo com upload de imagem, variações com preview de cor, preço/custo/margem calculada automaticamente, peso e dimensões reais, visibilidade e gerador de variações em lote.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Pedidos</h3>
-            <p>Lista com filtro de período, criação manual de pedido, atualização de status com e-mail automático e exportação CSV.</p>
+            <h3>Produtos e pedidos</h3>
+            <p>Cadastra produtos com fotos e variações, acompanha cada pedido e atualiza o status com um clique.</p>
           </div>
           <div class="service-card service-card-done">
             <h3>Financeiro</h3>
-            <p>Dashboard com vendas online + lançamentos manuais, integração direta com a API do Mercado Pago e exportação em PDF e CSV.</p>
+            <p>Vê o dinheiro que entra, dia a dia, direto no painel.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Clientes e carrinhos abandonados</h3>
-            <p>Histórico de pedidos por cliente, cupom individual, e acompanhamento de carrinhos abandonados com contato direto por WhatsApp.</p>
+            <h3>Aparência da loja</h3>
+            <p>Troca cores, textos e imagens da loja sozinha, com prévia ao vivo antes de publicar.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Aparência e equipe</h3>
-            <p>Editor visual (cores, textos, logo, hero) com preview ao vivo em desktop/mobile, e múltiplos administradores com convite por e-mail.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Integrações self-service</h3>
-            <p>A loja conecta a própria conta do Mercado Pago e do Google Analytics/Tag Manager direto pelo painel, sem mexer em variável de ambiente ou pedir ajuda técnica.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-group">
-        <h2>Auditoria de segurança — duas rodadas independentes</h2>
-        <p class="service-group-sub">Depois de construir o produto, fizemos uma auditoria completa e, propositalmente, uma segunda rodada independente, tratando a primeira como não confirmada — testando ao vivo contra o banco de produção em vez de só reler o próprio código. A segunda rodada encontrou 2 bugs reais que a primeira não tinha pego.</p>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <h3>Vazamento de e-mail via política de banco</h3>
-            <p>Uma policy expunha o e-mail do cliente vinculado a um cupom pessoal pra qualquer requisição anônima.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> Row Level Security revisado em todas as tabelas expostas.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Estoque nunca decrementado</h3>
-            <p>Não era uma race condition — nenhuma baixa de estoque acontecia de fato na compra.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> operação atômica no Postgres pra reserva de estoque, testada simulando duas compras concorrentes na última unidade.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Endpoint de status de pedido público</h3>
-            <p>Qualquer um podia consultar o status de qualquer pedido, sem checar quem estava perguntando.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> separação de funções client-safe vs. admin vs. internal, nunca reaproveitando uma função com privilégio de service role numa rota pública.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Webhook do Mercado Pago sem validação</h3>
-            <p>Sem validação de assinatura nem conferência do valor pago.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> validação HMAC do webhook.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Função de estoque aceitava quantidade negativa</h3>
-            <p>Testada ao vivo, a função aumentava o estoque em vez de recusar a operação.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> triggers de banco pra impedir escalação de privilégio mesmo que uma política de RLS tenha uma brecha.</p>
-          </div>
-          <div class="challenge-item">
-            <h3>Rate limiter lendo o IP errado</h3>
-            <p>O cabeçalho lido era a parte que o próprio atacante controla.</p>
-            <p class="challenge-fix"><strong>Correção:</strong> rate limiting implementado direto no Postgres, sem infraestrutura nova.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-group">
-        <h2>Desafios técnicos que valem destaque</h2>
-        <div class="service-grid">
-          <div class="service-card service-card-done">
-            <h3>Multi-tenant-ready desde o início</h3>
-            <p>O admin foi desenhado pra eventualmente virar um produto vendável pra outras lojas — configurações, cores, integrações e credenciais são todas por-loja, não hardcoded.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Cálculo de frete real por produto</h3>
-            <p>Peso/dimensões de cada item somados pra gerar uma cotação real via API, com fallback gracioso quando faltam dados.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Reserva de estoque atômica</h3>
-            <p>Função Postgres que decrementa todos os itens de um pedido numa única transação — tudo ou nada.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Segurança como processo</h3>
-            <p>Duas auditorias, testes ao vivo contra RLS real com múltiplas identidades simuladas, e verificação do bundle JavaScript compilado pra confirmar que nenhuma chave secreta vazou pro cliente.</p>
+            <h3>Segurança dos dados</h3>
+            <p>A loja passou por uma auditoria completa de segurança, garantindo que os dados de clientes e pagamentos estão protegidos.</p>
           </div>
         </div>
       </div>

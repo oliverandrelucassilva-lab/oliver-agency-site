@@ -55,122 +55,29 @@
         <p>A 193 Shoes precisava resolver um problema bem específico do varejo de calçados: modelos não têm "nome de produto", só categoria, cor e código de referência, e a numeração multiplica o controle necessário. A lojista precisava checar o estoque físico toda vez que um cliente perguntava sobre disponibilidade, e as fotos de cada tamanho ficavam soltas na galeria do celular, difíceis de achar e compartilhar rápido no WhatsApp. Desenvolvemos uma plataforma interna, acessível de qualquer lugar com login protegido, que centraliza produtos, fotos e estoque por numeração.</p>
       </div>
 
-      <div class="tech-stack">
-        <p class="tech-stack-label">Stack técnica</p>
-        <div class="badges">
-          <span class="badge">Next.js 16 (App Router)</span>
-          <span class="badge">TypeScript</span>
-          <span class="badge">Tailwind CSS</span>
-          <span class="badge">Supabase (Postgres, Auth, Storage)</span>
-          <span class="badge">Vercel + GitHub (CI/CD)</span>
-        </div>
-      </div>
-
       <div class="service-group">
-        <h2>Funcionalidades principais</h2>
+        <h2>O que fizemos</h2>
         <p class="service-group-sub">Pensado pra uma lojista sem background técnico operar sozinha, no dia a dia.</p>
         <div class="service-grid">
           <div class="service-card service-card-done">
-            <h3>Autenticação obrigatória</h3>
-            <p>Sistema 100% interno, protegido por login (Supabase Auth), acessível de qualquer dispositivo.</p>
+            <h3>Acesso protegido, de qualquer lugar</h3>
+            <p>Sistema interno com login, acessível do celular ou computador, de onde a lojista estiver.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Catálogo com filtros combinados</h3>
-            <p>Busca por modelo, numeração e código/cor, com indicadores visuais de "estoque baixo" e "esgotado".</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Cadastro de produtos flexível</h3>
-            <p>Código de referência, modelo (categoria configurável pela própria loja), cor, preço de venda/custo e observações.</p>
+            <h3>Catálogo organizado</h3>
+            <p>Busca por modelo, numeração e cor, com avisos visuais de estoque baixo ou esgotado.</p>
           </div>
           <div class="service-card service-card-done">
             <h3>Estoque por tamanho</h3>
-            <p>Quantidade individual para cada numeração (33–41), com botões de ajuste rápido (+/-) sem abrir o formulário completo.</p>
+            <p>Controle da quantidade de cada numeração, com ajuste rápido de entrada e saída.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Foto por tamanho + compartilhar</h3>
-            <p>Cada numeração pode ter sua própria foto. Um botão "Compartilhar" usa a Web Share API do navegador pra enviar a imagem direto pelo WhatsApp em um toque — resolvendo a dor original de "procurar foto na galeria".</p>
+            <h3>Foto por tamanho, direto no WhatsApp</h3>
+            <p>Cada numeração tem sua própria foto, com um botão que envia a imagem certa direto pro WhatsApp em um toque — sem precisar procurar na galeria do celular.</p>
           </div>
           <div class="service-card service-card-done">
-            <h3>Gestão de modelos/categorias</h3>
-            <p>A loja cadastra, renomeia e remove os tipos de calçado que usa, sem precisar de intervenção técnica.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Modo escuro</h3>
-            <p>Toggle persistente com detecção automática da preferência do sistema, aplicado antes da primeira renderização (sem flash de tema errado).</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Identidade visual customizada</h3>
-            <p>Sidebar de navegação, paleta de cores e componentes desenhados sob medida a partir de referências visuais fornecidas pela cliente.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Graceful degradation</h3>
-            <p>Se as variáveis do banco de dados ainda não estiverem configuradas, o sistema mostra uma tela de status em vez de quebrar — permitindo publicar e validar o deploy antes da infraestrutura estar 100% pronta.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="service-group">
-        <h2>Processo de desenvolvimento</h2>
-        <ol class="process-list process-list-3col">
-          <li class="process-step">
-            <span class="step-number">01</span>
-            <div>
-              <h3>Descoberta</h3>
-              <p>Conversa inicial em linguagem natural com o cliente pra levantar os requisitos reais: filtro por imagem/tamanho/modelo, uso interno vs. público, dor específica do atendimento.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-number">02</span>
-            <div>
-              <h3>Decisão de arquitetura</h3>
-              <p>Escolha entre stack com backend gerenciado (Next.js + Supabase) vs. solução local — optamos pela primeira pra permitir acesso multi-dispositivo sem manter servidor próprio.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-number">03</span>
-            <div>
-              <h3>Modelagem de dados</h3>
-              <p>Schema relacional (categorias → produtos → imagens → estoque por tamanho) com Row Level Security, garantindo que só usuários autenticados acessem os dados.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-number">04</span>
-            <div>
-              <h3>Construção incremental</h3>
-              <p>Catálogo com filtros → CRUD de produtos com upload de imagens → gestão de categorias → autenticação → deploy.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-number">05</span>
-            <div>
-              <h3>Iteração guiada pelo cliente</h3>
-              <p>Após o primeiro deploy, novos requisitos foram incorporados em ciclos curtos: foto por tamanho compartilhável, branding, sidebar e modo escuro a partir de referências enviadas pela cliente.</p>
-            </div>
-          </li>
-          <li class="process-step">
-            <span class="step-number">06</span>
-            <div>
-              <h3>Deploy e infraestrutura</h3>
-              <p>Publicação contínua na Vercel integrada ao GitHub, com banco Supabase configurado via variáveis de ambiente e fallback visual pra não quebrar o site caso a infraestrutura ainda não estivesse pronta.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-
-      <div class="service-group">
-        <h2>Destaques técnicos</h2>
-        <div class="service-grid">
-          <div class="service-card service-card-done">
-            <h3>Server Actions do Next.js</h3>
-            <p>Todas as mutações (criar/editar produto, upload de imagem, ajuste de estoque) sem necessidade de API routes separadas.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Design tokens para tema claro/escuro</h3>
-            <p>CSS custom properties com script anti-flash pra aplicar o tema salvo antes da primeira renderização.</p>
-          </div>
-          <div class="service-card service-card-done">
-            <h3>Edge cases de produção</h3>
-            <p>Build quebrando por falta de Suspense boundary, cliente Supabase lançando erro sem variáveis de ambiente — resolvidos proativamente antes de impactar a cliente.</p>
+            <h3>Identidade visual própria</h3>
+            <p>Um visual pensado sob medida pra loja, com modo escuro e categorias que a própria lojista organiza.</p>
           </div>
         </div>
       </div>
