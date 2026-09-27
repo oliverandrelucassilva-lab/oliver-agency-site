@@ -8,6 +8,7 @@
   --orange: #FF6B2C;
   --orange-dark: #e2551a;
   --orange-light: #fff1e8;
+  --red: #d0342c;
   --white: #ffffff;
   --ink: #101826;
   --ink-soft: #4b5768;
@@ -693,6 +694,16 @@ svg { flex-shrink: 0; }
   margin-top: 32px;
 }
 .profile-story h2 { font-size: 1.35rem; margin-bottom: 14px; }
+.ps-heading {
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 24px 0 8px;
+}
+.ps-heading:first-child { margin-top: 0; }
+.ps-heading-problem { color: var(--red); }
+.ps-heading-solution { color: var(--orange-dark); }
 .profile-story p { font-size: 1.02rem; }
 .profile-story p + p { margin-top: 1em; }
 
