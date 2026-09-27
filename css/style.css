@@ -10,6 +10,8 @@
   --orange-light: #fff1e8;
   --red: #d0342c;
   --red-light: #fbe8e7;
+  --green: #1f7a4d;
+  --green-light: #e5f4ec;
   --white: #ffffff;
   --ink: #101826;
   --ink-soft: #4b5768;
@@ -708,12 +710,28 @@ svg { flex-shrink: 0; }
 }
 .ps-badge:first-child { margin-top: 0; }
 .ps-badge-problem { background: var(--red-light); color: var(--red); }
-.ps-badge-solution { background: var(--blue-light); color: var(--blue-dark); }
+.ps-badge-solution { background: var(--green-light); color: var(--green); }
 
+.service-card { display: flex; flex-direction: column; }
+
+.service-block {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 2px solid var(--line);
+}
+.service-block:first-of-type { margin-top: 32px; padding-top: 0; border-top: none; }
+.service-block-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: var(--blue-dark);
+  margin-bottom: 20px;
+}
 .service-why {
   margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px dashed var(--line);
   font-size: 0.85rem;
   color: var(--ink-soft);
 }
