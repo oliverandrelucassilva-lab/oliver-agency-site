@@ -9,6 +9,7 @@
   --orange-dark: #e2551a;
   --orange-light: #fff1e8;
   --red: #d0342c;
+  --red-light: #fbe8e7;
   --white: #ffffff;
   --ink: #101826;
   --ink-soft: #4b5768;
@@ -694,16 +695,29 @@ svg { flex-shrink: 0; }
   margin-top: 32px;
 }
 .profile-story h2 { font-size: 1.35rem; margin-bottom: 14px; }
-.ps-heading {
-  font-size: 1.1rem;
-  font-weight: 800;
+.ps-badge {
+  display: block;
+  width: fit-content;
+  font-size: 0.78rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin: 24px 0 8px;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 24px 0 10px;
 }
-.ps-heading:first-child { margin-top: 0; }
-.ps-heading-problem { color: var(--red); }
-.ps-heading-solution { color: var(--orange-dark); }
+.ps-badge:first-child { margin-top: 0; }
+.ps-badge-problem { background: var(--red-light); color: var(--red); }
+.ps-badge-solution { background: var(--blue-light); color: var(--blue-dark); }
+
+.service-why {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.service-why strong { color: var(--ink); }
 .profile-story p { font-size: 1.02rem; }
 .profile-story p + p { margin-top: 1em; }
 
