@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OrtoMaster — Case Oliver Agency</title>
-<meta name="description" content="Veja os serviços que a Oliver Agency realizou para a OrtoMaster e o que mais podemos oferecer pra esse negócio crescer.">
+<title>OrtoMaster — Meury, atendimento automático via WhatsApp | Oliver Agency</title>
+<meta name="description" content="Veja como a Meury, recepcionista de IA da Oliver Agency, automatiza o atendimento via WhatsApp da OrtoMaster.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A4A8F%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23FF6B2C%22 font-family=%22Arial%22>O</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,14 +44,17 @@
         </div>
         <div class="profile-heading">
           <h1>OrtoMaster</h1>
-          <p class="profile-niche">Clínica Odontológica</p>
+          <p class="profile-niche">Clínica Odontológica — Euclides da Cunha, BA</p>
           <div class="profile-badges">
-            <span class="status-badge">Atendimento automático</span>
+            <span class="status-badge">Meury — Atendimento automático via WhatsApp</span>
           </div>
         </div>
       </div>
 
-      <p class="profile-intro">Nossa recepcionista virtual com IA atende pelo WhatsApp da OrtoMaster: dá boas-vindas, responde dúvidas e agenda pacientes 24 horas por dia.</p>
+      <div class="profile-story">
+        <p>Meury é uma recepcionista de IA para WhatsApp que qualifica pacientes, tira dúvidas, apresenta procedimentos e agenda consultas de ponta a ponta, sem intervenção humana no primeiro contato. O projeto foi desenvolvido pra OrtoMaster como o segundo cliente a usar essa arquitetura — a Meury já existia antes pra Odonto Med, e aqui foi adaptada pra uma clínica com 8 profissionais, 11 procedimentos diferentes e regras de agenda bem mais complexas (profissionais com dias fixos, profissionais com disponibilidade mensal variável, procedimentos atendidos por mais de um profissional).</p>
+        <p>O objetivo de negócio é simples: tirar da equipe da clínica o trabalho repetitivo de responder WhatsApp, qualificar quem está interessado em qual procedimento, e marcar consultas — liberando tempo para o atendimento presencial, sem perder a qualidade humana da conversa.</p>
+      </div>
 
       <div class="profile-links">
         <a class="profile-link social-preview" href="https://instagram.com/clinica_ortomaster" target="_blank" rel="noopener">
@@ -65,15 +68,102 @@
         </a>
       </div>
 
+      <div class="tech-stack">
+        <p class="tech-stack-label">Stack técnica</p>
+        <div class="badges">
+          <span class="badge">n8n (self-hosted / Easypanel)</span>
+          <span class="badge">UazAPI (WhatsApp)</span>
+          <span class="badge">OpenAI</span>
+          <span class="badge">Supabase (Postgres)</span>
+          <span class="badge">Redis</span>
+          <span class="badge">Google Calendar (OAuth2)</span>
+        </div>
+      </div>
+
       <div class="service-group">
-        <h2>O que já entregamos</h2>
-        <p class="service-group-sub">Serviço realizado pra OrtoMaster.</p>
+        <h2>Arquitetura técnica</h2>
+        <p class="service-group-sub">Do WhatsApp até a resposta, passando por 6 agentes de IA.</p>
+        <p>O fluxo começa quando o paciente manda uma mensagem no WhatsApp da clínica. O n8n recebe essa mensagem via UazAPI, consulta o histórico e a memória daquele paciente no Supabase, e passa tudo pro Agente Roteador, que decide qual dos 5 subagentes especializados deve responder. Depois que o subagente escolhido resolve a demanda, o Motor de Contexto atualiza a memória do paciente antes da resposta final voltar ao WhatsApp — usando Google Calendar, Redis e OpenAI como ferramentas de apoio conforme a necessidade. Toda a infraestrutura roda numa mesma instância n8n compartilhada, com credenciais e workflows separados por cliente, permitindo atender múltiplas clínicas sem duplicar infraestrutura.</p>
         <div class="service-grid">
           <div class="service-card service-card-done">
-            <h3>Atendimento automático</h3>
-            <p>Recepcionista virtual com IA respondendo e agendando pelo WhatsApp.</p>
+            <h3>Roteador</h3>
+            <p>Primeiro a receber a mensagem; decide para qual dos outros 5 agentes encaminhar a conversa.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Atende e Qualifica</h3>
+            <p>Acolhe o paciente, identifica o procedimento de interesse a partir da fala informal dele (mapeando gírias como "chumbar o dente" pro nome oficial) e associa ao profissional certo.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Agendador</h3>
+            <p>Verifica disponibilidade no Google Calendar, calcula o horário de término com base na duração de cada procedimento, cria/reagenda/cancela a consulta e notifica a equipe.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>FAQ</h3>
+            <p>Responde perguntas institucionais recorrentes: endereço, horário, formas de pagamento, estacionamento, especialidades atendidas.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Especialista em Procedimentos</h3>
+            <p>Explica cada um dos 11 procedimentos em detalhe — se dói, quanto tempo dura, qual o resultado esperado — em linguagem acessível.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Motor de Contexto</h3>
+            <p>Roda após cada interação e atualiza a memória do paciente, pra qualquer subagente que assumir a conversa depois já saber onde ela parou.</p>
           </div>
         </div>
+      </div>
+
+      <div class="service-group">
+        <h2>Desafios técnicos e soluções</h2>
+        <p class="service-group-sub">Boa parte do trabalho não foi só escrever os prompts dos agentes, mas montar e depurar toda a infraestrutura por trás deles.</p>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <h3>Conexão com o banco de dados</h3>
+            <p>A primeira tentativa de conexão direta falhou com erro de rede IPv6 (<code>ENETUNREACH</code>), porque o host de conexão direta do Supabase exige IPv6.</p>
+            <p class="challenge-fix"><strong>Correção:</strong> troca para o Session Pooler do Supabase (compatível com IPv4) e reset oficial da senha do banco, em vez de assumir uma senha já conhecida.</p>
+          </div>
+          <div class="challenge-item">
+            <h3>OAuth do Google Calendar</h3>
+            <p>O cliente OAuth criado no Google Cloud Console retornava repetidamente "Erro 401: invalid_client", mesmo com as credenciais corretas.</p>
+            <p class="challenge-fix"><strong>Correção:</strong> exclusão e recriação do cliente OAuth do zero (tipo Web Application, com a URL de callback do n8n como redirect URI), e publicação da tela de consentimento para Produção — evitando a expiração do token a cada 7 dias que o modo de Teste impõe.</p>
+          </div>
+          <div class="challenge-item">
+            <h3>Provedor de WhatsApp (UazAPI)</h3>
+            <p>Ao criar um servidor separado para a OrtoMaster, o projeto acabou pagando por duas assinaturas quando bastava uma.</p>
+            <p class="challenge-fix"><strong>Correção:</strong> consolidação das duas clínicas-cliente num único servidor UazAPI, com uma instância (número de WhatsApp) por clínica.</p>
+          </div>
+          <div class="challenge-item">
+            <h3>Regras de agenda com múltiplos profissionais</h3>
+            <p>Diferente do primeiro cliente, a OrtoMaster tem profissionais com dias fixos, profissionais com apenas 1 dia por mês (variável) e procedimentos atendidos por mais de um profissional.</p>
+            <p class="challenge-fix"><strong>Correção:</strong> tabela de pré-filtro por dia da semana dentro do próprio prompt do Agendador, evitando chamadas desnecessárias à API do Google Calendar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-group">
+        <h2>Diferenciais e decisões de design</h2>
+        <div class="service-grid">
+          <div class="service-card service-card-done">
+            <h3>Mapeamento de linguagem coloquial</h3>
+            <p>O agente Atende e Qualifica reconhece expressões do dia a dia — "chumbar o dente", "tirar o nervo", "dentinho de leite" — e converte pro procedimento oficial, sem exigir termo técnico do paciente.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Regra de ouro da disponibilidade</h3>
+            <p>A ferramenta de agenda retorna horários ocupados, não livres — o prompt do Agendador tem exemplos explícitos passo a passo pra nunca confundir "horário na lista" com "horário disponível".</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Procedimentos de duração variável</h3>
+            <p>Facetas em boca completa e Harmonização Facial completa têm duração variável demais pra um agendamento automático — o Agendador sempre marca a consulta de avaliação (duração fixa) e encaminha o procedimento completo pra equipe marcar manualmente.</p>
+          </div>
+          <div class="service-card service-card-done">
+            <h3>Ponte com sistema legado sem API</h3>
+            <p>A clínica usa um sistema de gestão (X2/XProcess) sem integração disponível — toda consulta criada, remarcada ou cancelada gera um aviso formatado num grupo da equipe, pra lançamento manual, mantendo os dois sistemas sincronizados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-story">
+        <h2>Resultado</h2>
+        <p>O resultado é uma recepcionista de WhatsApp que atende 24/7, entende a linguagem informal do paciente, apresenta a solução certa pro procedimento certo, agenda consultas respeitando regras complexas de agenda e mantém a equipe da clínica informada em tempo real — tudo rodando sobre uma arquitetura modular que reaproveita a mesma base de n8n + subagentes usada em outras clínicas-cliente, alterando apenas o conteúdo de cada prompt.</p>
       </div>
 
       <div class="service-group">
