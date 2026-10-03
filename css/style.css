@@ -418,8 +418,9 @@ svg { flex-shrink: 0; }
   min-width: 0;
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
+.cases-viewport::-webkit-scrollbar { display: none; }
 .cases-slide { scroll-snap-align: start; }
 .cases-track {
   display: flex;
