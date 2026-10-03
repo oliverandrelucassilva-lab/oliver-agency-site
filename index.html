@@ -77,44 +77,49 @@
       </div>
 
       <div class="grid grid-3">
-        <article class="card reveal">
+        <article class="card card-service reveal" data-service="atendimento" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="serviceModal">
           <div class="card-icon icon-orange">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z"/><path d="M8.5 9.5c0-.6.4-1 1-1h1c.4 0 .7.2.9.6l.6 1.2c.2.4.1.8-.2 1.1l-.6.6c.4 1 1.2 1.8 2.2 2.2l.6-.6c.3-.3.7-.4 1.1-.2l1.2.6c.4.2.6.5.6.9v1c0 .6-.4 1-1 1-4.4 0-8-3.6-8-8Z"/></svg>
           </div>
           <h3>Atendimento Automático via WhatsApp</h3>
-          <p>Uma recepcionista virtual com IA que responde na hora, agenda horários e envia lembretes automaticamente — mesmo fora do expediente. Seu cliente nunca mais espera.</p>
+          <p>Uma recepcionista virtual com IA que responde na hora, agenda horários e envia lembretes automaticamente, mesmo fora do expediente. Seu cliente nunca mais espera.</p>
+          <span class="card-more">Saiba mais <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg></span>
         </article>
 
-        <article class="card reveal">
+        <article class="card card-service reveal" data-service="sites" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="serviceModal">
           <div class="card-icon icon-blue">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><path d="M8 21h8"/><path d="M12 18v3"/></svg>
           </div>
           <h3>Sites institucionais</h3>
-          <p>Landing pages profissionais e personalizadas, feitas pra transmitir confiança e converter visitante em contato — sem parecer template genérico.</p>
+          <p>Landing pages profissionais e personalizadas, feitas pra transmitir confiança e converter visitante em contato, sem parecer template genérico.</p>
+          <span class="card-more">Saiba mais <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg></span>
         </article>
 
-        <article class="card reveal">
+        <article class="card card-service reveal" data-service="seo" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="serviceModal">
           <div class="card-icon icon-orange">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
           </div>
           <h3>Presença digital / SEO local</h3>
           <p>Ajudamos seu negócio a aparecer melhor no Google e no Google Meu Negócio, atraindo mais clientes da sua própria região.</p>
+          <span class="card-more">Saiba mais <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg></span>
         </article>
 
-        <article class="card reveal">
+        <article class="card card-service reveal" data-service="redes" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="serviceModal">
           <div class="card-icon icon-blue">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
           </div>
           <h3>Gestão de redes sociais</h3>
           <p>Cuidamos do conteúdo e da presença ativa nas redes sociais do seu negócio, pra atrair e fidelizar clientes de forma constante.</p>
+          <span class="card-more">Saiba mais <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg></span>
         </article>
 
-        <article class="card reveal">
+        <article class="card card-service reveal" data-service="trafego" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="serviceModal">
           <div class="card-icon icon-orange">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20V10M18 20V4M6 20v-6"/></svg>
           </div>
           <h3>Tráfego pago</h3>
           <p>Anúncios segmentados no Google e nas redes sociais pra colocar seu negócio na frente de quem já está procurando o que você oferece.</p>
+          <span class="card-more">Saiba mais <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg></span>
         </article>
       </div>
     </div>
@@ -380,6 +385,36 @@
       </a>
     </div>
   </section>
+
+  <!-- MODAL DE SERVIÇO -->
+  <div class="modal-overlay" id="serviceModalOverlay" hidden>
+    <div class="modal-panel" id="serviceModal" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
+      <button class="modal-close" id="serviceModalClose" type="button" aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-icon" id="serviceModalIcon"></div>
+        <h2 id="serviceModalTitle"></h2>
+      </div>
+
+      <p class="modal-summary" id="serviceModalSummary"></p>
+
+      <h3 class="modal-subhead">Como funciona</h3>
+      <ol class="modal-steps" id="serviceModalSteps"></ol>
+
+      <h3 class="modal-subhead">O que está incluso</h3>
+      <ul class="modal-included" id="serviceModalIncluded"></ul>
+
+      <p class="modal-audience"><strong>Pra quem é:</strong> <span id="serviceModalAudience"></span></p>
+
+      <p class="modal-note" id="serviceModalNote" hidden></p>
+
+      <a class="btn btn-primary btn-lg modal-cta" id="serviceModalCta" target="_blank" rel="noopener">
+        Quero saber mais
+      </a>
+    </div>
+  </div>
 
 </main>
 
