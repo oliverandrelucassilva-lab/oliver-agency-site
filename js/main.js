@@ -124,66 +124,61 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceData = {
     atendimento: {
       name: 'Atendimento Automático via WhatsApp',
-      summary: 'Uma recepcionista virtual com IA que responde na hora, agenda horários e envia lembretes, mesmo fora do expediente.',
+      highlight: 'Atendimento rápido, organizado e disponível o tempo todo.',
       steps: [
-        'Conectamos a IA ao WhatsApp da sua empresa.',
-        'Configuramos a IA com as informações do seu negócio: serviços, horários, regras de agendamento e o tom de voz que você quer.',
-        'A IA responde dúvidas e agenda direto na sua agenda.',
-        'Lembretes automáticos são enviados antes de cada atendimento.',
-        'Casos delicados ou sem resposta são encaminhados para uma pessoa da sua equipe.',
+        'Um assistente inteligente responde o público no WhatsApp com o jeito e a identidade do negócio.',
+        'As dúvidas mais comuns são resolvidas na hora.',
+        'Os agendamentos são organizados automaticamente.',
+        'A equipe é acionada somente quando o caso exige atendimento humano.',
       ],
-      included: ['Configuração completa', 'Testes antes de entrar no ar', 'Ajustes iniciais', 'Acompanhamento'],
-      audience: 'Negócios que recebem muitas mensagens e perdem clientes por demora na resposta.',
+      included: ['Assistente personalizado para o negócio', 'Organização de agendamentos', 'Avisos para a equipe', 'Acompanhamento e ajustes contínuos'],
+      audience: 'Clínicas e negócios que recebem muitas mensagens e querem atender melhor sem sobrecarregar a equipe.',
     },
     sites: {
       name: 'Sites institucionais',
-      summary: 'Páginas profissionais e personalizadas, feitas para transmitir confiança e levar o visitante ao contato.',
+      highlight: 'Uma presença profissional online, pensada para transmitir confiança.',
       steps: [
-        'Entendemos seu negócio e sua identidade visual.',
-        'Criamos o design com suas cores, fotos e informações.',
-        'Você revisa e pede os ajustes.',
-        'Publicamos no ar, com endereço próprio e botão direto para o WhatsApp.',
+        'O site é desenhado a partir da identidade do negócio.',
+        'O conteúdo é organizado para apresentar bem os serviços e facilitar o contato.',
+        'O visitante chega ao WhatsApp com um clique.',
+        'O resultado é leve, moderno e adaptado a celular e computador.',
       ],
-      included: ['Design personalizado', 'Versão para celular', 'Botão de WhatsApp', 'Publicação', 'SEO técnico básico'],
-      audience: 'Profissionais e empresas que querem ser encontrados e passar mais credibilidade.',
+      included: ['Design personalizado', 'Versão otimizada para celular', 'Botão direto para WhatsApp', 'Publicação no ar e suporte'],
+      audience: 'Empresas e profissionais que querem ser encontrados e passar credibilidade antes mesmo do primeiro contato.',
     },
     seo: {
       name: 'Presença digital / SEO local',
-      summary: 'Ajudamos seu negócio a aparecer melhor no Google e no Google Meu Negócio, atraindo clientes da sua região.',
+      highlight: 'Mais visibilidade para quem procura o serviço na região.',
       steps: [
-        'Revisamos ou criamos seu perfil no Google Meu Negócio.',
-        'Otimizamos categorias, descrição, horários e informações de contato.',
-        'Cadastramos o site no Google Search Console.',
-        'Conferimos a consistência de nome, endereço e telefone em todos os lugares.',
-        'Cadastramos o negócio em diretórios relevantes.',
+        'Um trabalho estratégico posiciona o negócio nas buscas locais.',
+        'A presença online passa a transmitir mais autoridade e confiança.',
+        'O objetivo é ser encontrado por quem já está procurando o serviço na cidade.',
       ],
-      included: ['Perfil otimizado', 'Configuração do Search Console', 'Kit de informações padronizadas'],
-      audience: 'Negócios locais que dependem de ser encontrados na cidade e na região.',
+      included: ['Estratégia de visibilidade local', 'Presença online organizada e padronizada', 'Acompanhamento dos resultados'],
+      audience: 'Negócios locais que querem aparecer quando o público pesquisa na internet.',
     },
     redes: {
       name: 'Gestão de redes sociais',
-      summary: 'Cuidamos do conteúdo e da presença ativa nas redes sociais do seu negócio.',
+      highlight: 'Perfis ativos, com identidade e constância.',
       steps: [
-        'Definimos objetivo, público e linha de conteúdo.',
-        'Montamos um calendário de publicações.',
-        'Criamos as artes e textos.',
-        'Publicamos e acompanhamos o desempenho.',
+        'A comunicação é planejada de acordo com o perfil do negócio e do público.',
+        'O conteúdo segue uma linha visual própria e é publicado com regularidade.',
+        'O perfil passa a refletir a qualidade do trabalho oferecido.',
       ],
-      included: ['Planejamento', 'Criação e publicação do conteúdo', 'Relatório do que funcionou'],
-      audience: 'Quem quer manter perfis ativos e profissionais sem ter tempo de cuidar disso.',
+      included: ['Planejamento de conteúdo', 'Criação e publicação das postagens', 'Identidade visual consistente', 'Acompanhamento do desempenho'],
+      audience: 'Negócios que querem manter as redes sociais ativas e profissionais sem perder tempo com isso.',
     },
     trafego: {
       name: 'Tráfego pago',
-      summary: 'Anúncios segmentados no Google e nas redes sociais para colocar seu negócio na frente de quem já está procurando o que você oferece.',
+      highlight: 'Anúncios pensados para atrair o público certo.',
       steps: [
-        'Definimos objetivo, público e verba.',
-        'Criamos os anúncios e as segmentações.',
-        'Lançamos e acompanhamos as campanhas.',
-        'Ajustamos conforme os resultados.',
+        'As campanhas são planejadas com objetivo claro e público definido.',
+        'Os anúncios levam as pessoas interessadas direto para o contato com o negócio.',
+        'Os resultados são acompanhados e as campanhas são ajustadas ao longo do tempo.',
       ],
-      included: ['Estratégia da campanha', 'Criação e acompanhamento dos anúncios'],
-      audience: 'Negócios que querem acelerar a chegada de novos clientes com investimento controlado.',
-      note: 'O valor investido em anúncios é pago à parte, direto na plataforma.',
+      included: ['Planejamento e gestão das campanhas', 'Definição de público e objetivos', 'Relatórios de desempenho', 'Otimização contínua'],
+      audience: 'Negócios que querem acelerar a chegada de novos contatos de forma mensurável.',
+      note: 'O investimento em anúncios é separado do valor da gestão.',
     },
   };
 
@@ -221,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modalIcon.innerHTML = card ? card.querySelector('.card-icon').innerHTML : '';
       modalTitle.textContent = data.name;
-      modalSummary.textContent = data.summary;
+      modalSummary.textContent = data.highlight;
       fillList(modalSteps, data.steps);
       fillList(modalIncluded, data.included);
       modalAudience.textContent = data.audience;
@@ -233,7 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
         modalNote.hidden = true;
       }
 
-      const message = `Olá, Lucas! Vi o serviço de ${data.name} no site da Oliver Agency e queria saber mais.`;
+      modalCta.textContent = `Quero saber mais sobre ${data.name}`;
+      const message = `Olá! Tenho interesse em ${data.name} e gostaria de saber mais.`;
       modalCta.href = `https://wa.me/5575998316140?text=${encodeURIComponent(message)}`;
 
       history.pushState({ serviceModal: slug }, '', `#servicos-${slug}`);

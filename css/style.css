@@ -1002,6 +1002,8 @@ svg { flex-shrink: 0; }
   position: fixed;
   inset: 0;
   background: rgba(16, 24, 38, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1074,7 +1076,14 @@ svg { flex-shrink: 0; }
 .modal-icon svg { width: 26px; height: 26px; }
 .modal-header h2 { font-size: 1.3rem; margin: 0; }
 
-.modal-summary { font-size: 1.02rem; color: var(--ink-soft); margin-bottom: 24px; }
+.modal-summary {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--blue-dark);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
 
 .modal-subhead {
   font-size: 0.9rem;
