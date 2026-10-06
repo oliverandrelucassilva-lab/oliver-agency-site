@@ -93,8 +93,18 @@ const SITE_CONTENT = {
     },
   ],
 
-  portfolioHead: {
+  portfolioCoversHead: {
     tag: 'Portfólio',
+    title: 'Um pouco do que já colocamos no ar',
+    lead: 'Imagens reais dos projetos entregues. Passe o mouse (ou toque) para ver o site ou o projeto completo.',
+  },
+  portfolioMore: {
+    title: 'Ver mais projetos',
+    desc: 'Veja todos os clientes atendidos pela Oliver Agency, incluindo os que ainda não têm imagem de capa.',
+  },
+
+  portfolioHead: {
+    tag: 'Clientes',
     title: 'Projetos em operação',
     lead: 'Cada projeto representa uma empresa real que confiou no trabalho da Oliver Agency. O portfólio está em constante crescimento.',
   },
@@ -206,6 +216,39 @@ const PORTFOLIO_DATA = [
   },
 ];
 
+// Capas com prova visual exibidas na seção Portfólio (acima de "Quem somos").
+// type: 'external' abre o site do cliente em nova aba; 'internal' leva até a seção Clientes.
+const PORTFOLIO_COVERS = [
+  {
+    file: '193-shoes',
+    name: '193 Shoes',
+    niche: 'Loja de Calçados Femininos',
+    cover: 'assets/img/covers/193-shoes.jpg',
+    link: { type: 'internal' },
+  },
+  {
+    file: 'dra-yumi-sasaki',
+    name: 'Dra. Yumi Sasaki',
+    niche: 'Odontologia Estética',
+    cover: 'assets/img/covers/dra-yumi-sasaki.jpg',
+    link: { type: 'external', href: 'https://www.drayumisasaki.com.br' },
+  },
+  {
+    file: 'clinica-amalos',
+    name: 'Clínica Amalos',
+    niche: 'Saúde Integrativa e Odontológica',
+    cover: 'assets/img/covers/clinica-amalos.jpg',
+    link: { type: 'external', href: 'https://clinica-amalos-site.vercel.app' },
+  },
+  {
+    file: 'jf-move',
+    name: 'JF Move',
+    niche: 'Moda Fitness',
+    cover: 'assets/img/covers/jf-move.jpg',
+    link: { type: 'internal' },
+  },
+];
+
 // Conteúdo dos modais de serviço, aberto a partir dos cards em #servicos.
 const SERVICE_MODAL_DATA = {
   atendimento: {
@@ -272,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const svgIcon = (inner) => `<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">${inner}</svg>`;
   const svgIconSmall = (inner) => `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8">${inner}</svg>`;
   const arrowIcon = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>';
+  const globeIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
 
   const setText = (id, text) => {
     const el = document.getElementById(id);
@@ -302,6 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('tecnologiaTag', SITE_CONTENT.tecnologiaHead.tag);
     setText('tecnologiaTitle', SITE_CONTENT.tecnologiaHead.title);
     setText('tecnologiaLead', SITE_CONTENT.tecnologiaHead.lead);
+
+    setText('portfolioCoversTag', SITE_CONTENT.portfolioCoversHead.tag);
+    setText('portfolioCoversTitle', SITE_CONTENT.portfolioCoversHead.title);
+    setText('portfolioCoversLead', SITE_CONTENT.portfolioCoversHead.lead);
 
     setText('portfolioTag', SITE_CONTENT.portfolioHead.tag);
     setText('portfolioTitle', SITE_CONTENT.portfolioHead.title);
@@ -351,6 +399,43 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`
       )
       .join('');
+  };
+
+  const renderPortfolioCovers = () => {
+    const grid = document.getElementById('portfolioCoversGrid');
+    if (!grid) return;
+
+    const cards = PORTFOLIO_COVERS.map((p) => {
+      const isExternal = p.link.type === 'external';
+      const href = isExternal ? p.link.href : '#cases';
+      const target = isExternal ? ' target="_blank" rel="noopener"' : '';
+      const label = isExternal ? 'Ver site' : 'Ver projeto';
+      const icon = isExternal ? globeIcon : arrowIcon;
+      return `
+        <a class="portfolio-cover" href="${href}"${target}>
+          <span class="portfolio-cover-media">
+            <img src="${p.cover}" alt="Captura de tela do projeto ${p.name}" loading="lazy">
+            <span class="portfolio-cover-overlay">
+              <span class="portfolio-cover-cta">${icon} ${label}</span>
+            </span>
+          </span>
+          <span class="portfolio-cover-caption">
+            <strong>${p.name}</strong>
+            <span>${p.niche}</span>
+          </span>
+        </a>`;
+    });
+
+    const moreCard = `
+      <a class="portfolio-cover portfolio-cover-more" href="#cases">
+        <span class="portfolio-cover-more-inner">
+          ${arrowIcon}
+          <strong>${SITE_CONTENT.portfolioMore.title}</strong>
+          <span>${SITE_CONTENT.portfolioMore.desc}</span>
+        </span>
+      </a>`;
+
+    grid.innerHTML = cards.join('') + moreCard;
   };
 
   const renderPortfolio = () => {
@@ -426,6 +511,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderStaticText();
   renderServicos();
   renderTecnologia();
+  renderPortfolioCovers();
   renderPortfolio();
   renderProcesso();
   renderDiferenciais();

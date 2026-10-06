@@ -24,10 +24,11 @@
   <div class="container header-inner">
     <a href="#topo" class="logo">Oliver<span>Agency</span></a>
     <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="#portfolio-destaque">Portfólio</a>
       <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
       <a href="#competencias">Tecnologia</a>
-      <a href="#cases">Portfólio</a>
+      <a href="#cases">Clientes</a>
       <a href="#processo">Processo</a>
       <a href="#contato" class="nav-cta">Fale com a gente</a>
     </nav>
@@ -55,6 +56,24 @@
     </div>
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="hero-glow-2" aria-hidden="true"></div>
+  </section>
+
+  <!-- PORTFÓLIO (capas) -->
+  <section class="section" id="portfolio-destaque">
+    <div class="container">
+      <div class="section-head">
+        <span class="tag reveal" id="portfolioCoversTag"></span>
+        <h2 class="reveal" id="portfolioCoversTitle"></h2>
+        <p class="lead reveal" id="portfolioCoversLead"></p>
+      </div>
+
+      <!--
+        Os cards deste grid são gerados pelo array PORTFOLIO_COVERS em js/main.js.
+        Para adicionar a capa de um novo projeto, inclua um item nesse array e a
+        imagem correspondente em assets/img/covers/ (não edite este HTML).
+      -->
+      <div class="portfolio-covers-grid" id="portfolioCoversGrid"></div>
+    </div>
   </section>
 
   <!-- SOBRE -->
