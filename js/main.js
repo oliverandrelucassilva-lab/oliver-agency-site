@@ -175,7 +175,7 @@ const PORTFOLIO_DATA = [
   {
     file: '193-shoes',
     tagLabel: 'Sistema de Gestão de Estoque',
-    avatar: { type: 'fallback', text: '193' },
+    avatar: { type: 'img', src: 'assets/img/193-shoes.png', alt: 'Logo da 193 Shoes' },
     name: '193 Shoes',
     niche: 'Loja de Calçados Femininos',
     desc: 'Sistema interno de controle de estoque por numeração, com envio de foto por tamanho direto pelo WhatsApp.',
@@ -199,7 +199,7 @@ const PORTFOLIO_DATA = [
   {
     file: 'dra-yumi-sasaki',
     tagLabel: 'Site Institucional',
-    avatar: { type: 'fallback', text: 'YS' },
+    avatar: { type: 'img', src: 'assets/img/dra-yumi-sasaki.png', alt: 'Logo da Dra. Yumi Sasaki' },
     name: 'Dra. Yumi Sasaki',
     niche: 'Odontologia',
     desc: 'Site institucional desenvolvido para apresentar a atuação profissional, as especialidades e facilitar o contato direto pelo WhatsApp.',
