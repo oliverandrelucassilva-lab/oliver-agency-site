@@ -217,14 +217,15 @@ const PORTFOLIO_DATA = [
 ];
 
 // Capas com prova visual exibidas na seção Portfólio (acima de "Quem somos").
-// type: 'external' abre o site do cliente em nova aba; 'internal' leva até a seção Clientes.
+// type: 'external' abre o site do cliente em nova aba; 'page' leva direto para a
+// página de case (href) na mesma aba; 'internal' leva até a seção Clientes.
 const PORTFOLIO_COVERS = [
   {
     file: '193-shoes',
     name: '193 Shoes',
     niche: 'Loja de Calçados Femininos',
     cover: 'assets/img/covers/193-shoes.jpg',
-    link: { type: 'internal' },
+    link: { type: 'page', href: 'https://oliver-agency-site.vercel.app/cases/193-shoes.html' },
   },
   {
     file: 'dra-yumi-sasaki',
@@ -407,7 +408,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cards = PORTFOLIO_COVERS.map((p) => {
       const isExternal = p.link.type === 'external';
-      const href = isExternal ? p.link.href : '#cases';
+      const isPage = p.link.type === 'page';
+      const href = isExternal || isPage ? p.link.href : '#cases';
       const target = isExternal ? ' target="_blank" rel="noopener"' : '';
       const label = isExternal ? 'Ver site' : 'Ver projeto';
       const icon = isExternal ? globeIcon : arrowIcon;
