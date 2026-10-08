@@ -248,6 +248,13 @@ const PORTFOLIO_COVERS = [
     cover: 'assets/img/covers/jf-move.jpg',
     link: { type: 'internal' },
   },
+  {
+    file: 'clinica-odonto-med',
+    name: 'Clínica Odonto Med',
+    niche: 'Clínica Médica e Odontológica',
+    cover: 'assets/img/covers/clinica-odonto-med.jpg',
+    link: { type: 'internal' },
+  },
 ];
 
 // Conteúdo dos modais de serviço, aberto a partir dos cards em #servicos.
