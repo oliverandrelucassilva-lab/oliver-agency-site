@@ -221,11 +221,11 @@ const PORTFOLIO_DATA = [
 // página de case (href) na mesma aba; 'internal' leva até a seção Clientes.
 const PORTFOLIO_COVERS = [
   {
-    file: '193-shoes',
-    name: '193 Shoes',
-    niche: 'Loja de Calçados Femininos',
-    cover: 'assets/img/covers/193-shoes.jpg',
-    link: { type: 'page', href: 'https://oliver-agency-site.vercel.app/cases/193-shoes.html' },
+    file: 'jf-move',
+    name: 'JF Move',
+    niche: 'Moda Fitness',
+    cover: 'assets/img/covers/jf-move.jpg',
+    link: { type: 'internal' },
   },
   {
     file: 'dra-yumi-sasaki',
@@ -242,11 +242,11 @@ const PORTFOLIO_COVERS = [
     link: { type: 'external', href: 'https://clinica-amalos-site.vercel.app' },
   },
   {
-    file: 'jf-move',
-    name: 'JF Move',
-    niche: 'Moda Fitness',
-    cover: 'assets/img/covers/jf-move.jpg',
-    link: { type: 'internal' },
+    file: '193-shoes',
+    name: '193 Shoes',
+    niche: 'Loja de Calçados Femininos',
+    cover: 'assets/img/covers/193-shoes.jpg',
+    link: { type: 'page', href: 'https://oliver-agency-site.vercel.app/cases/193-shoes.html' },
   },
   {
     file: 'clinica-odonto-med',
