@@ -255,6 +255,13 @@ const PORTFOLIO_COVERS = [
     cover: 'assets/img/covers/clinica-odonto-med.jpg',
     link: { type: 'internal' },
   },
+  {
+    file: 'ortomaster',
+    name: 'OrtoMaster',
+    niche: 'Clínica Odontológica',
+    cover: 'assets/img/covers/ortomaster.jpg',
+    link: { type: 'internal' },
+  },
 ];
 
 // Conteúdo dos modais de serviço, aberto a partir dos cards em #servicos.
